@@ -51,7 +51,7 @@ class Libro {
     document.write(`<br>El libro ${this.titulo} con ISBN (${this.codigo}) creado por el autor ${this.autor} tiene páginas ${this.numeroPaginas}.<br>`)
   }
   masPaginas(){
-    if
+
   }
 }
 
