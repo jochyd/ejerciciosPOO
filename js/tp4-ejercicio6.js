@@ -1,3 +1,4 @@
+
 /*6- Crear una clase Libro que contenga al menos
  las siguientes propiedades:
 ISBN
@@ -15,7 +16,6 @@ Crear al menos 2 objetos libros y utilizar el método mostrarLibro();
 Por último, indicar cuál de los 2 objetos “libros” tiene más páginas.
 
 */
-
 class Libro {
   constructor(isbn, titulo, autor, numeroPaginas){
     this._codigo = isbn;
@@ -23,65 +23,39 @@ class Libro {
     this._autor = autor;
     this._numeroPaginas = numeroPaginas;
   }
-  get isbn(){
+  set modificarIsbn(nuevoIsbn){
+    this._codigo = nuevoIsbn;
+  }
+  set modificarTitulo(nuevoTitulo){
+    this._titulo = nuevoTitulo;
+  }
+  set modificarAutor(nuevoAutor){
+    this._autor = nuevoAutor;
+  }
+  set modificarNumPaginas(nuevoNumPaginas){
+    this._numeroPaginas = nuevoNumPaginas;
+  }
+  get nuevoIsbn(){
     return this._codigo;
   }
-  get titulo(){
+  get nuevoTitulo(){
     return this._titulo;
   }
-  get autor(){
+  get nuevoAutor(){
     return this._autor;
   }
-  get numeroPaginas(){
+  get nuevoNumPaginas(){
     return this._numeroPaginas;
   }
-  set isbn(cod){
-    this._codigo = cod;
-  }
-  set titulo(tit){
-    this._titulo = tit;
-  }
-  set autor(aut){
-    this._autor = aut;
-  }
-  set numeroPaginas(numero){
-    this._codigo = numero;
-  }
-  mostrarLibro(){
-    document.write(`<br>El libro ${this.titulo} con ISBN (${this.codigo}) creado por el autor ${this.autor} tiene páginas ${this.numeroPaginas}.<br>`)
-  }
-  masPaginas(){
 
+  mostrarLibro(){
+    document.write(`<br>El libro ${this._titulo} con ISBN (${this._codigo}) creado por el autor ${this._autor} tiene páginas ${this._numeroPaginas}.<br>`)
   }
+
 }
 
-let libro1 = new Libro(
-    isbn = 1234567891011,
-    titulo = 'Harry Potter',
-    autor = 'J.K.R',
-    numeroPaginas = 872,
-);
 
-libro1.codigo = 1234567891011;
-libro1.titulo = 'Harry Potter';
-libro1.autor = 'J.K.R';
-libro1.numeroPaginas = 872;
-
+let libro1 = new Libro(1234567891011,'Harry Potter', 'J.K.R',872);
+console.log(libro1);
 libro1.mostrarLibro();
-
-let libro2 = new Libro(
-    isbn = 9826472635789,
-    titulo = 'El Señor de los Anillos',
-    autor = 'J.K.T',
-    numeroPaginas = 1272,
-);
-
-let pagina1 = 872;
-let pagina2 = 1272;
-
-libro2.codigo = 9826472635789;
-libro2.titulo = 'El Señor de los Anillos';
-libro2.autor = 'J.K.T';
-libro2.numeroPaginas = 1272;
-
-libro2.mostrarLibro();
+let libro2 = new Libro(1242314145, 'El señor de los Anillos', 'J.K.T', 1412);
